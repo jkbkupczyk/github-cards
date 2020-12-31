@@ -1,0 +1,22 @@
+@import url("https://fonts.google.com/specimen/Poppins");
+
+*{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    font-family: "Poppins", sans-serif;
+    color: #404040;
+}
+
+@media screen and (min-width: 781px){    
+
+}
