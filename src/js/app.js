@@ -1,13 +1,21 @@
 const USER_API_URL = "https://api.github.com/users/";
 
 const main = document.querySelector(".main");
-const search = document.querySelector("#searchBox");
+const searchBox = document.querySelector("#searchBox");
 
 function getUserInfo(user) {
     fetch(USER_API_URL + user)
-        .then(resp => resp.json())
-        .then(user => createUser(user))
-        .catch(err => console.error(err));
+        .then(res => {
+            if (res.ok) {
+                return res.json();
+            }
+            else {
+                userNotFound();
+                return Promise.reject(`Error: ${res.status}`);
+            }
+        })
+        .then(data => createUser(data))
+        .catch(err => console.log(err));
 }
 
 function createUser(data) {
@@ -18,8 +26,8 @@ function createUser(data) {
             </div>
 
             <div class="data">
-                <h2>${validate(data.name)}</h2>
-                <p>${validate(data.bio)}</p>
+                <h2>${validateData(data.name)}</h2>
+                <p>${validateData(data.bio)}</p>
             </div>
 
             <div class="">
@@ -37,15 +45,22 @@ function createUser(data) {
     main.innerHTML = userCard;
 }
 
-function validate(text) {
-    return text === null ? "<i>No info </i>😥" : text;
+function userNotFound() {
+    main.innerHTML = `
+        <div class="userCard">
+            <h2>User not found 😥</h2>
+        </div>`;
 }
 
-search.addEventListener("change", call => {
+function validateData(data) {
+    return data === null ? "<i>No info </i>😥" : data;
+}
+
+searchBox.addEventListener("change", call => {
     call.preventDefault();
 
-    if (search.value) {
-        getUserInfo(search.value);
-        search.value = "";
+    if (searchBox.value) {
+        getUserInfo(searchBox.value);
+        searchBox.value = "";
     }
 });
