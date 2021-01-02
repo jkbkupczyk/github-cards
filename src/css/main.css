@@ -29,4 +29,44 @@ body {
     color: #101010;
 }
 
-@media screen and (min-width: 781px) {}
+input {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #fefefe;
+    border-radius: 8px;
+    color: #404040;
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+.user-card{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.image img {
+    height: 256px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 200px;
+}
+
+.more-info {
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {}

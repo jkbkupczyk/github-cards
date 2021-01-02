@@ -1,7 +1,7 @@
 const USER_API_URL = "https://api.github.com/users/";
 
 const main = document.querySelector(".main");
-const searchBox = document.querySelector("#searchBox");
+const searchBox = document.querySelector("#search-box");
 
 function getUserInfo(user) {
     fetch(USER_API_URL + user)
@@ -20,25 +20,30 @@ function getUserInfo(user) {
 
 function createUser(data) {
     const userCard = `
-        <div class="userCard">
+        <div class="user-card">
             <div class="image">
-                <img src="${data.avatar_url}" alt="Image of user ${data.name}">
+                <a href="${data.html_url}" target="_blank" rel="noopener">
+                    <img src="${data.avatar_url}" alt="User image">
+                </a>
             </div>
 
-            <div class="data">
-                <h2>${validateData(data.name)}</h2>
-                <p>${validateData(data.bio)}</p>
-            </div>
+            <div class="wrapper">
+                <div class="data">
+                    <h2>${validateData(data.name)}</h2>
+                    <span class="nickname">${data.login}</span>
+                    <p>${validateData(data.bio)}</p>
+                </div>
 
-            <div class="">
-                <ul>
-                    <li>${data.followers}</li>
-                    <li>${data.following}</li>
-                    <li>${data.public_repos}</li>
-                </ul>
-            </div>
+                <div class="stats">
+                    <ul>
+                        <li>👀 ${data.followers}</li>
+                        <li>👍 ${data.following}</li>
+                        <li>📂 ${data.public_repos}</li>
+                    </ul>
+                </div>
 
-            <button>Show more info</button>
+                <button class="more-info">Show more info</button>
+            </div>
         </div>
     `;
 
@@ -54,6 +59,10 @@ function userNotFound() {
 
 function validateData(data) {
     return data === null ? "<i>No info </i>😥" : data;
+}
+
+function validateEmail(data) {
+    return;
 }
 
 searchBox.addEventListener("change", call => {
