@@ -20,8 +20,8 @@ function getUserInfo(user) {
 
 function createUser(data) {
     const userCard = `
-        <div class="user-card">
-            <div class="image">
+        <div id="card" class="user-card">
+            <div class="image-container">
                 <a href="${data.html_url}" target="_blank" rel="noopener">
                     <img src="${data.avatar_url}" alt="User image">
                 </a>
@@ -34,27 +34,31 @@ function createUser(data) {
                     <p>${validateData(data.bio)}</p>
                 </div>
 
-                <div class="stats">
+                <div class="stats container">
                     <ul>
-                        <li>👀 ${data.followers}</li>
-                        <li>👍 ${data.following}</li>
-                        <li>📂 ${data.public_repos}</li>
+                        <li title="Followers">👀 ${data.followers}</li>
+                        <li title="Following">👍 ${data.following}</li>
+                        <li title="Public Repos">📂 ${data.public_repos}</li>
                     </ul>
                 </div>
 
-                <button class="more-info">Show more info</button>
+                <button id="more-info-btn" class="more-info">Show more info</button>
             </div>
         </div>
     `;
 
     main.innerHTML = userCard;
+
+    document.querySelector("#card").focus();
 }
 
 function userNotFound() {
     main.innerHTML = `
-        <div class="userCard">
+        <div id="card" class="userCard">
             <h2>User not found 😥</h2>
         </div>`;
+
+    document.querySelector("#card").focus();
 }
 
 function validateData(data) {

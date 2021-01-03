@@ -1,7 +1,15 @@
 .ribbon {
+    position: fixed;
+    display: block;
     justify-content: center;
     text-align: center;
     align-items: center;
+    width: 250px;
+    height: 250px;
+    right: 0;
+    top: 0;
+    margin: 0.5rem;
+    overflow: hidden;
 }
 
 .ribbon a {
@@ -44,27 +52,20 @@
     background-color: #fefefe;
 }
 
-.ribbon a {
-    position: absolute;
-    width: 240px;
-    right: -55px;
-    top: 45px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
     .ribbon {
-        position: fixed;
-        display: block;
-        width: 250px;
-        height: 250px;
-        right: 0;
-        top: 0;
-        overflow: hidden;
+        margin: 0;
+    }
+    .ribbon a {
+        position: absolute;
+        width: 240px;
+        right: -55px;
+        top: 45px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
     }
 }
