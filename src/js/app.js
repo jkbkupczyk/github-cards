@@ -5,13 +5,13 @@ const searchBox = document.querySelector("#search-box");
 
 function getUserInfo(user) {
     fetch(USER_API_URL + user)
-        .then(res => {
-            if (res.ok) {
-                return res.json();
+        .then(response => {
+            if (response.ok) {
+                return response.json();
             }
             else {
                 userNotFound();
-                return Promise.reject(`Error: ${res.status}`);
+                return Promise.reject(`Error: ${response.status}`);
             }
         })
         .then(data => createUser(data))
@@ -41,8 +41,6 @@ function createUser(data) {
                         <li title="Public Repos">📂 ${data.public_repos}</li>
                     </ul>
                 </div>
-
-                <button id="more-info-btn" class="more-info">Show more info</button>
             </div>
         </div>
     `;
@@ -57,16 +55,10 @@ function userNotFound() {
         <div id="card" class="userCard">
             <h2>User not found 😥</h2>
         </div>`;
-
-    document.querySelector("#card").focus();
 }
 
 function validateData(data) {
     return data === null ? "<i>No info </i>😥" : data;
-}
-
-function validateEmail(data) {
-    return;
 }
 
 searchBox.addEventListener("change", call => {

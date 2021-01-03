@@ -40,7 +40,7 @@ input {
     font-size: 1rem;
 }
 
-input:focus {
+input:focus, .more-info {
     outline: none;
 }
 
@@ -95,8 +95,6 @@ ul {
     width: 200px;
 }
 
-.more-info {
-    margin: 2rem;
+@media screen and (min-width) {
+    .user-card {}
 }
-
-@media screen and (max-width: 768px) {}
