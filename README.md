@@ -1,6 +1,5 @@
 # github-cards
-
-<h2 align="center">Get profile cards for your GitHub profile 😁</h2>
+### Get profile cards for your GitHub profile 😁
 
 ## How to use?
 
