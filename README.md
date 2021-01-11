@@ -10,5 +10,12 @@ Just <a href="https://jkbkupczyk.github.io/github-cards">visit</a> and fill the 
 then you'll see your:
 
 👀 - followers
+<br>
 👍 - following
+<br>
 📂 - numbers of public repos
+
+### How to get?
+```git
+  $ git clone https://github.com/jkbkupczyk/github-cards
+```
