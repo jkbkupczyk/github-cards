@@ -4,9 +4,8 @@
 
 ### How to use?
 
-Just visit [page] and fill the input with your github nickname
+Just <a href="https://jkbkupczyk.github.io/github-cards">visit</a> and fill the input with your github nickname
 
 
 <img align="center" src="https://github.com/jkbkupczyk/github-cards/blob/main/readme-g.gif" width="" height="" />
 
-![page](https://jkbkupczyk.github.io/github-cards/) 
