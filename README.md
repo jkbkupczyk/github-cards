@@ -1,4 +1,4 @@
-<h1 align="center">github-cards</h1>
+# github-cards
 
 <h2 align="center">Get profile cards for your GitHub profile 😁</h2>
 
