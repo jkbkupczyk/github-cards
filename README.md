@@ -7,3 +7,8 @@ Just <a href="https://jkbkupczyk.github.io/github-cards">visit</a> and fill the 
 
 <img align="center" src="https://github.com/jkbkupczyk/github-cards/blob/main/readme-g.gif" width="" height="" />
 
+then you'll see your:
+
+👀 - followers
+👍 - following
+📂 - numbers of public repos
